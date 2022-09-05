@@ -1,0 +1,20 @@
+.card {
+  grid-template-areas:
+    "h3"
+    "image"
+    "info";
+  gap: 5px;
+  width: 35vw;
+  margin-top: 30px;
+  padding: 10px;
+}
+
+.card:hover {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.card h3 {
+  grid-area: h3;
+  font-size: 30px;
+  /* margin: 0 0 5px 90px;*/
+}

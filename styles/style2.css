@@ -1,0 +1,441 @@
+@import url("https://fonts.googleapis.com/css2?family=DynaPuff&family=Play&family=Righteous&family=Rubik+Marker+Hatch&display=swap");
+@import url(cards-style.css);
+@import url(nav-bar-style.css);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  list-style: none;
+}
+
+li:hover {
+  color: #3333ff;
+  text-decoration: none;
+}
+
+/* unvisited link */
+a:link {
+  color: black;
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  color: lightpink;
+  text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+  color: #3333ff;
+  text-decoration: none;
+}
+
+body {
+  display: grid;
+  grid-template-areas:
+    "nav nav nav"
+    "header header header"
+    "article article article"
+    "main main aside"
+    "main main aside"
+    "main main aside"
+    "footer footer footer";
+  grid-template-columns: 40% 40% 1fr;
+  background-image: url("Images/background2.jpg");
+}
+:root {
+  font-family: "Righteous", "Courier New", Courier, monospace;
+}
+
+header {
+  font-size: 3rem;
+  grid-area: header;
+  font-family: "DynaPuff", serif;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header p {
+  font-family: "Play", serif;
+  font-size: 1rem;
+  text-decoration: underline;
+  display: flex;
+  justify-content: center;
+}
+
+header:hover {
+  text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
+}
+
+article {
+  font-size: 1rem;
+  grid-area: article;
+  font-family: "Play", serif;
+  padding: 10px;
+  margin-left: 50px;
+  width: 80%;
+}
+
+blockquote {
+  font-style: italic;
+  padding: 10px;
+}
+
+cite p {
+  font-weight: bold;
+}
+
+/*This is the layout of the cards*/
+
+main {
+  grid-area: main;
+  display: flex;
+  flex-wrap: wrap;
+  width: 80vw;
+  margin: 80px 0 0 50px;
+}
+
+figure img {
+  grid-area: image;
+  width: 75%;
+  /*margin-left: 90px;*/
+}
+
+figcaption {
+  grid-area: info;
+  width: 75%;
+  font-family: "Play", serif;
+}
+
+/* This is for the sidebar */
+
+aside {
+  grid-area: aside;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  height: 50%;
+  margin-top: 160px;
+  padding: 5px;
+}
+
+aside h3 {
+  font-size: 20px;
+}
+
+.categories {
+  border: 2px solid #3333ff;
+}
+
+.categories li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid #0078d0;
+  padding: 5px;
+  margin-top: 5px;
+  font-family: "Play", serif;
+}
+
+.post {
+  border: 2px solid #3333ff;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.post-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.categories:hover {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.post:hover {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+/*This is for the footer */
+
+footer {
+  grid-area: footer;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+.footer-buttons {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+}
+
+.footer-buttons button {
+  align-items: center;
+  appearance: button;
+  background-color: #0276ff;
+  border-radius: 20px;
+  border-style: none;
+  box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  font-family: "Play", serif;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+  padding: 10px 21px;
+  text-align: center;
+  text-transform: none;
+}
+
+.footer-buttons button:hover {
+  background-color: #1c84ff;
+}
+
+/* This is the contact info*/
+
+.contact-info {
+  width: 100%;
+  height: 300px;
+  background-color: #ffe6f9;
+  margin-top: 20px;
+}
+
+.contact-info img {
+  height: 50px;
+  width: 50px;
+}
+
+.contact-info h2 {
+  height: 110px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  font-family: "DynaPuff", serif;
+}
+
+.contact-cards {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-self: flex-end;
+  justify-content: space-evenly;
+}
+
+.contact-cards h3 {
+  font-size: 2em;
+  font-family: "DynaPuff", serif;
+}
+
+.contact-cards p {
+  font-family: "Play", serif;
+}
+
+/* This is the information footer*/
+
+.socials-info {
+  height: 300px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #ffb3ec;
+}
+
+.socials-info h3 {
+  font-size: 2em;
+  font-family: "DynaPuff", serif;
+}
+
+.social-media img {
+  width: 3vw;
+}
+
+.something p {
+  font-family: "Play", serif;
+}
+
+/* This is the copyright footer */
+
+.copy-r {
+  width: 100%;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  background-color: #800062;
+}
+
+/* CSS for laptop and tablet */
+
+@media screen and (max-width: 1024px) and (min-width: 361px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "nav"
+      "header"
+      "article"
+      "main"
+      "aside"
+      "footer";
+  }
+  main {
+    align-self: center;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+  .card {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card h3 {
+    font-size: 1.25em;
+  }
+}
+
+/* CSS for mobile */
+
+@media screen and (max-width: 360px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "nav"
+      "header"
+      "article"
+      "main"
+      "aside"
+      "footer";
+  }
+
+  nav {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "logo"
+      "ul"
+      "button";
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  nav button {
+    margin-top: 5px;
+    width: 50vw;
+    justify-self: center;
+  }
+
+  header {
+    width: 100vw;
+    font-size: 1.5em;
+  }
+
+  article {
+    width: 100vw;
+    margin: 0;
+    font-size: 0.85em;
+    border: 1px dashed #ffb3ec;
+  }
+
+  main {
+    align-self: center;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+  .card {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card h3 {
+    font-size: 1.25em;
+  }
+
+  aside {
+    width: 100vw;
+  }
+
+  .footer-buttons {
+    width: 100vw;
+  }
+
+  .contact-info {
+    width: 100vw;
+    font-size: 1em;
+  }
+
+  .contact-cards {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .contact-cards h3 {
+    font-size: 1em;
+  }
+
+  .contact-cards p {
+    font-size: 0.6em;
+  }
+
+  .socials-info {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+
+  .socials-info img {
+    width: 9vw;
+  }
+
+  .social-media {
+    font-size: 0.5em;
+  }
+
+  .something h3 {
+    font-size: 1.5em;
+  }
+
+  .something {
+    font-size: 0.7em;
+  }
+}
