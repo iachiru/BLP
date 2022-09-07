@@ -13,38 +13,15 @@
   list-style: none;
 }
 
-li:hover {
-  color: #3333ff;
-  text-decoration: none;
-}
-
-/* unvisited link */
-a:link {
-  color: black;
-  text-decoration: none;
-}
-
-/* visited link */
-a:visited {
-  color: lightpink;
-  text-decoration: none;
-}
-
-/* mouse over link */
-a:hover {
-  color: #3333ff;
-  text-decoration: none;
-}
-
 body {
   display: grid;
   grid-template-areas:
     "nav nav nav"
     "header header header"
     "article article article"
-    "main main aside"
-    "main main aside"
-    "main main aside"
+    "main main main"
+    "main main main"
+    "main main main"
     "footer footer footer";
   grid-template-columns: 40% 40% 1fr;
   background-image: url("Images/background2.jpg");
@@ -75,7 +52,7 @@ header p {
 header:hover {
   text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
 }
-
+/* This is for the introduction*/
 article {
   font-size: 1rem;
   grid-area: article;
@@ -100,10 +77,17 @@ main {
   grid-area: main;
   display: flex;
   flex-wrap: wrap;
-  width: 80vw;
+  width: 90vw;
   margin: 80px 0 0 50px;
+  border: 2px solid red;
 }
 
+section {
+  border: 2px solid red;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
 figure img {
   grid-area: image;
   width: 75%;
@@ -114,58 +98,6 @@ figcaption {
   grid-area: info;
   width: 75%;
   font-family: "Play", serif;
-}
-
-/* This is for the sidebar */
-
-aside {
-  grid-area: aside;
-  display: flex;
-  flex-direction: column;
-  gap: 100px;
-  height: 50%;
-  margin-top: 160px;
-  padding: 5px;
-}
-
-aside h3 {
-  font-size: 20px;
-}
-
-.categories {
-  border: 2px solid #3333ff;
-}
-
-.categories li {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  border-bottom: 1px solid #0078d0;
-  padding: 5px;
-  margin-top: 5px;
-  font-family: "Play", serif;
-}
-
-.post {
-  border: 2px solid #3333ff;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.post-card {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.categories:hover {
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
-
-.post:hover {
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 /*This is for the footer */
@@ -311,6 +243,7 @@ footer {
     grid-template-columns: 1fr;
     width: 100%;
   }
+
   .card {
     width: 75%;
     display: flex;
