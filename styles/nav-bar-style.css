@@ -25,6 +25,7 @@ nav ul {
   gap: 50px;
   font-family: "DynaPuff", serif;
   list-style: none;
+  /*display: none; when on mobile and I want them hidden*/
 }
 
 nav button {
@@ -60,4 +61,27 @@ nav button:hover {
   box-shadow: rgba(255, 255, 255, 0.2) 0 3px 15px inset,
     rgba(0, 0, 0, 0.1) 0 3px 5px, rgba(0, 0, 0, 0.1) 0 10px 13px;
   transform: scale(1.05);
+}
+
+/* Hamburger menu for mobile version*/
+
+#h__menu {
+  display: flex;
+  flex-direction: column;
+  width: 35px;
+  height: 30px;
+  margin: 30px 0 20px 20px;
+  cursor: pointer;
+}
+
+#h__menu span {
+  height: 5px;
+  width: 100%;
+  background-color: black;
+  display: block;
+  border-radius: 5px;
+}
+
+span:not(:last-child) {
+  margin-bottom: 5px;
 }
