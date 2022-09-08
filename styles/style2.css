@@ -2,6 +2,7 @@
 @import url(cards-style.css);
 @import url(nav-bar-style.css);
 @import url(hamburger-style.css);
+@import url(form-style.css);
 * {
   box-sizing: border-box;
   margin: 0;
@@ -16,9 +17,9 @@ a {
   text-decoration: none;
 }
 
-html {
+/*html {
   scroll-behavior: smooth;
-}
+}*/
 
 body {
   display: grid;
@@ -87,10 +88,6 @@ main {
   gap: 1em;
   width: 90vw;
   margin: 80px 0 0 50px;
-}
-
-.active {
-  background-color: lime;
 }
 
 section {

@@ -61,3 +61,16 @@ function inViewport(element) {
       };
 
 });*/ //Need to decide what I want the function to do when section is in viewport. But it works
+
+// event listener for links scrolling
+
+document.querySelectorAll("#navigation a").forEach((a) => {
+  a.addEventListener("click", (event) => {
+    event.preventDefault();
+    const id = a.getAttribute("href");
+    const section = document.querySelector(id);
+    section.scrollIntoView({
+      behavior: "smooth",
+    });
+  });
+});

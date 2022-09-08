@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  list-style: none;
+}
+
+form {
+  display: flex;
+  background-color: #ffe6f9;
+  height: 30vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 87vw;
+  border-radius: 3em;
+}
+
+form h1 {
+  display: flex;
+  justify-content: center;
+}
