@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=DynaPuff&family=Play&family=Righteous&family=Rubik+Marker+Hatch&display=swap");
 @import url(cards-style.css);
 @import url(nav-bar-style.css);
-
+@import url(hamburger-style.css);
 * {
   box-sizing: border-box;
   margin: 0;
@@ -14,6 +14,10 @@
 }
 a {
   text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -83,6 +87,10 @@ main {
   gap: 1em;
   width: 90vw;
   margin: 80px 0 0 50px;
+}
+
+.active {
+  background-color: lime;
 }
 
 section {
