@@ -8,28 +8,19 @@
   </head>
   <body>
     <!--Navigation bar menu-->
-    <nav>
-      <h2 class="logo">
-        <img src="Images/logo.png " alt="Anime eyes logo" />
-        Know anime
-      </h2>
-      <ul id="navigation">
-        <li class="nav-link"><a href="#seinen">Seinen</a></li>
-        <li class="nav-link"><a href="#shonen">Shonen</a></li>
-        <li class="nav-link"><a href="#shojo">Shojo</a></li>
-        <li class="nav-link"><a href="#sports">Sports</a></li>
-      </ul>
-      <a href="#" id="h__menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </a>
-      <button>Sign up</button>
-    </nav>
-    <!--Navigation bar menu END-->
     <header>
-      Animes you should not miss
-      <p>Personal blog</p>
+      <div class="logo">
+        <img src="Images/logo.png " alt="Anime eyes logo" />
+      </div>
+      <nav>
+        <ul id="navigation"></ul>
+        <!-- <a href="#" id="h__menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>-->
+      </nav>
+      <!--Navigation bar menu END-->
     </header>
     <!--Introduction to the page-->
     <article>
@@ -53,7 +44,7 @@
     <!--Main content of the body, divided in 4 sections with cards inside-->
     <main>
       <!--Senin section-->
-      <section id="seinen">
+      <section id="seinen" data-nav="Seinen">
         <h1>Seinen</h1>
         <p>
           Seinen animes are stories targeted to young adult men. They usually
@@ -96,7 +87,7 @@
       </section>
       <!--Senin section END-->
       <!--Shonen section-->
-      <section id="shonen">
+      <section id="shonen" data-nav="Shonen">
         <!--Add Kimetsu No Yaiba-->
         <h1>Shonen</h1>
         <p>
@@ -137,7 +128,7 @@
       </section>
       <!--Shonen section END-->
       <!--Shojo section-->
-      <section id="shojo">
+      <section id="shojo" data-nav="Shojo">
         <!--Add Marmalade Boy-->
         <h1>Shojo</h1>
         <p>
@@ -187,7 +178,7 @@
       </section>
       <!--Shojo section END-->
       <!--Sports section-->
-      <section id="sports">
+      <section id="sports" data-nav="Sports">
         <!--Add Kuroko no Basuke-->
         <h1>Sports anime</h1>
         <p>
@@ -313,6 +304,8 @@
         Know anime, BS, 2022
       </div>
     </footer>
-    <script src="app.js"></script>
+    <!--  <script src="navigation.js"></script>-->
+
+    <script src="app1.js"></script>
   </body>
 </html>

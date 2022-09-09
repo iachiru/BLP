@@ -74,3 +74,5 @@ document.querySelectorAll("#navigation a").forEach((a) => {
     });
   });
 });
+
+// change the target to the id instead of link

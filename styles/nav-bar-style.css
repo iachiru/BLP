@@ -2,8 +2,26 @@ nav {
   grid-area: nav;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+  width: 80vw;
+}
+ul {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+ul li {
+  padding-right: 10em;
+}
+header {
+  position: sticky;
+  top: 0;
+  background-color: #ffb3ec;
+  width: 100vw;
+  display: flex;
+  border: 1px solid red;
 }
 
 nav:hover {
@@ -14,8 +32,14 @@ nav h2 {
   display: flex;
   align-items: center;
 }
+.logo {
+  width: 15vw;
+}
+.logo p {
+  margin-left: 10px;
+}
 
-nav h2 img {
+.logo img {
   width: 100px;
 }
 
@@ -25,42 +49,15 @@ nav ul {
   gap: 50px;
   font-family: "DynaPuff", serif;
   list-style: none;
+  justify-content: left;
   /*display: none; when on mobile and I want them hidden*/
 }
 
-nav button {
-  margin-right: 10px;
-  background-color: #0078d0;
-  border: 0;
-  border-radius: 56px;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  outline: 0;
-  padding: 16px 21px;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
+.active-navbar {
+  background-color: red;
 }
 
-nav button:before {
-  background-color: initial;
-  background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
-  border-radius: 125px;
-  content: "";
-  height: 50%;
-  left: 4%;
-  opacity: 0.5;
-  position: absolute;
-  top: 0;
-  transition: all 0.3s;
-  width: 92%;
+.section-active {
+  background-color: blue;
 }
-
-nav button:hover {
-  box-shadow: rgba(255, 255, 255, 0.2) 0 3px 15px inset,
-    rgba(0, 0, 0, 0.1) 0 3px 5px, rgba(0, 0, 0, 0.1) 0 10px 13px;
-  transform: scale(1.05);
-}
-
 /* Hamburger menu for mobile version*/
