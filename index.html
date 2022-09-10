@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Animes you should not miss</title>
+    <title>Anime types and recomandations</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="styles\style2.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,11 +14,13 @@
       </div>
       <nav>
         <ul id="navigation"></ul>
-        <!-- <a href="#" id="h__menu">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </a>-->
+        <div id="ham-menu">
+          <a href="#" id="h__menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </a>
+        </div>
       </nav>
       <!--Navigation bar menu END-->
     </header>
@@ -226,32 +228,63 @@
         </figure>
       </section>
       <!--Sports section END-->
-      <section id="subs-form">
-        <form method="post" enctype="application/x-www-form-urlencoded">
-          <h1 class="subscribe">Subscribe here</h1>
-          <fieldset>
-            <label for="user-name">Your name</label>
-            <input
-              required
-              type="text"
-              maxlength="50"
-              minlength="3"
-              name="user-name"
-              id="user-name"
-            />
-            <label for="user-email">Your e-mail address</label>
-            <input required type="email" name="user-email" id="user-email" />
-            <input type="submit" name="submit-button" />
-          </fieldset>
-        </form>
+      <section data-nav="Suggestions">
+        <div id="suggestions">
+          <form
+            method="post"
+            enctype="application/x-www-form-urlencoded"
+            id="user-form"
+          >
+            <h1 class="subscribe">What would you like to see next?</h1>
+
+            <fieldset id="contact-details">
+              <legend>Contact details</legend>
+              <label for="user-name">First name</label>
+              <input
+                required
+                type="text"
+                maxlength="20"
+                minlength="3"
+                name="user-name"
+                id="user-name"
+              />
+              <label for="user-surname">Surname</label>
+              <input
+                required
+                type="text"
+                maxlength="20"
+                minlength="3"
+                name="user-surname"
+                id="user-surname"
+              />
+              <label for="user-email">Your e-mail address</label>
+              <input required type="email" name="user-email" id="user-email" />
+              <label for="phone-number">Phone number</label>
+              <input
+                type="tel"
+                pattern="\d{11}\"
+                name="user-phone-number"
+                id="user-phone-number"
+              />
+            </fieldset>
+            <fieldset id="suggestions-text">
+              <legend>Let us know your thoughts</legend>
+              <textarea
+                name="suggestions"
+                id="Suggestions"
+                cols="30"
+                rows="10"
+              ></textarea>
+              <br /><br />
+            </fieldset>
+            <button type="submit" name="submit-button" id="submit-button">
+              Send
+            </button>
+          </form>
+        </div>
       </section>
     </main>
     <footer>
-      <div class="footer-buttons">
-        <button>1</button>
-        <button>2</button>
-        <button>Next</button>
-      </div>
       <div class="contact-info">
         <h2>Contact me</h2>
         <div class="contact-cards">

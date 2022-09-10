@@ -29,13 +29,13 @@ mainSections.forEach((section) => {
 
 // hamburger menu functionality
 
-/*const hamburgerMenu = document.querySelector("#h__menu");
+const hamburgerMenu = document.querySelector("#h__menu");
 const navigationMenu = document.querySelector("#navigation");
 
 hamburgerMenu.addEventListener("click", () => {
   hamburgerMenu.classList.toggle("active");
   navigationMenu.classList.toggle("active");
-});*/
+});
 
 window.addEventListener("scroll", markSection);
 
@@ -46,7 +46,7 @@ function markSection() {
     const sectionHeight = current.offsetHeight;
 
     const topOfSection =
-      current.getBoundingClientRect().top + pageScrollY - 100;
+      current.getBoundingClientRect().top + pageScrollY - 150;
     sectionId = current.getAttribute("data-nav");
     if (scrollY > topOfSection && scrollY <= topOfSection + sectionHeight) {
       document.getElementById(sectionId).classList.add("active-navbar");
@@ -57,3 +57,12 @@ function markSection() {
     }
   });
 }
+
+// Form submision alert
+
+const form = document.querySelector("#user-form");
+
+form.addEventListener("submit", function (ev) {
+  ev.preventDefault();
+  alert("Your suggestions have been subbmited succesfully!");
+});

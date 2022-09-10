@@ -1,7 +1,6 @@
 nav {
   grid-area: nav;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   width: 80vw;
@@ -21,7 +20,6 @@ header {
   background-color: #ffb3ec;
   width: 100vw;
   display: flex;
-  border: 1px solid red;
 }
 
 nav:hover {
@@ -54,10 +52,13 @@ nav ul {
 }
 
 .active-navbar {
-  background-color: red;
+  color: white;
 }
 
 .section-active {
-  background-color: blue;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  border-radius: 3em;
 }
+
 /* Hamburger menu for mobile version*/

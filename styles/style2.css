@@ -17,10 +17,6 @@ a {
   text-decoration: none;
 }
 
-/*html {
-  scroll-behavior: smooth;
-}*/
-
 body {
   display: grid;
   grid-template-areas:
@@ -32,27 +28,12 @@ body {
     "main main main"
     "footer footer footer";
   grid-template-columns: 40% 40% 1fr;
-  background-image: url("Images/background2.jpg");
-  border: 1px solid red;
+  background-image: url("Images\background2.jpg");
 }
 :root {
   font-family: "Righteous", "Courier New", Courier, monospace;
 }
 
-/*header {
-  font-size: 3rem;
-  grid-area: header;
-  font-family: "DynaPuff", serif;
-  height: 320px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}*/
-
-/*header:hover {
-  text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
-}*/
 /* This is for the introduction*/
 article {
   font-size: 1rem;
@@ -99,12 +80,6 @@ section h1 {
 section p {
   width: 80vw;
   padding: 1em;
-}
-
-section:hover {
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-  border-radius: 3em;
 }
 
 figure img {
@@ -243,7 +218,7 @@ footer {
 
 /* CSS for laptop and tablet */
 
-/*@media screen and (max-width: 1024px) and (min-width: 361px) {
+@media screen and (max-width: 1024px) and (min-width: 361px) {
   body {
     display: grid;
     grid-template-columns: 1fr;
@@ -273,20 +248,18 @@ footer {
   .card h3 {
     font-size: 1.25em;
   }
-} */
+}
 
 /* CSS for mobile */
 
-/*@media screen and (max-width: 360px) {
+@media screen and (max-width: 360px) {
   body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas:
-      "nav"
       "header"
       "article"
       "main"
-      "aside"
       "footer";
   }
 
@@ -294,27 +267,14 @@ footer {
     width: 100vw;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-areas:
-      "logo"
-      "ul"
-      "button";
+    grid-template-areas: "logo" "ul";
+    justify-items: end;
   }
 
   nav ul {
     display: flex;
     flex-direction: row;
     justify-content: center;
-  }
-
-  nav button {
-    margin-top: 5px;
-    width: 50vw;
-    justify-self: center;
-  }
-
-  header {
-    width: 100vw;
-    font-size: 1.5em;
   }
 
   article {
@@ -331,6 +291,9 @@ footer {
     grid-template-columns: 1fr;
     width: 100%;
   }
+  .logo {
+    width: 100px;
+  }
   .card {
     width: 75%;
     display: flex;
@@ -340,14 +303,6 @@ footer {
 
   .card h3 {
     font-size: 1.25em;
-  }
-
-  aside {
-    width: 100vw;
-  }
-
-  .footer-buttons {
-    width: 100vw;
   }
 
   .contact-info {
@@ -390,5 +345,72 @@ footer {
   .something {
     font-size: 0.7em;
   }
+  #ham-menu {
+    border: 1px solid red;
+    width: 125px;
+    display: flex;
+    justify-content: center;
+    float: right;
+  }
+  #h__menu {
+    display: flex;
+    flex-direction: column;
+    width: 35px;
+    height: 30px;
+    margin: 30px 0 20px 20px;
+    cursor: pointer;
+  }
+
+  #h__menu span {
+    height: 5px;
+    width: 100%;
+    background-color: black;
+    display: block;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+
+  span:not(:last-child) {
+    margin-bottom: 5px;
+  }
+
+  #h__menu.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  #h__menu.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  #h__menu.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  #navigation {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+    background-color: blueviolet;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  #navigation.active {
+    left: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: flex-end;
+  }
+
+  .active.navbar {
+    position: sticky;
+    top: 0;
+  }
 }
-*/
