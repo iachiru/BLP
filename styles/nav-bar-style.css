@@ -11,9 +11,6 @@ ul {
   align-content: center;
 }
 
-ul li {
-  padding-right: 10em;
-}
 header {
   position: sticky;
   top: 0;

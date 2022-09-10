@@ -1,16 +1,31 @@
-//Start with empty ul and build navigation dynamically by ussing append, appendChild and innerHTML.
+// selects every section
+const mainSections = document.querySelectorAll("[data-nav]");
 
-// Create an array that can hold your 4 sections.
+// store the ul  in a variable to be able to add the li elements
+let navUl = document.getElementById("navigation");
 
-//declared every section
+// for each section create an li item with an attribute that
+// can be used like link between nav and sections.
 
-const seinen = document.querySelector("#seinen");
-const shonen = document.querySelector("#shonen");
-const shojo = document.querySelector("#shojo");
-const sports = document.querySelector("#sports");
+// loop over each section
+mainSections.forEach((section) => {
+  sectionTitle = section.getAttribute("data-nav");
 
-//contained the variables in an array
-const mainDivisions = [seinen, shonen, shojo, sports];
+  // create li item with an id with the same name as the data-nav
+  // for each section that will serve as link
+  let li = document.createElement("li");
+  li.setAttribute("id", sectionTitle);
+  li.addEventListener("click", function (event) {
+    event.preventDefault();
+    section.scrollIntoView({ behavior: "smooth" });
+  });
+
+  //create a title for the li in the nav that serves as anchor
+  //append both the title and the li items to the ul
+  let title = document.createTextNode(sectionTitle);
+  li.append(title);
+  navUl.appendChild(li);
+});
 
 // hamburger menu functionality
 
@@ -22,57 +37,32 @@ hamburgerMenu.addEventListener("click", () => {
   navigationMenu.classList.toggle("active");
 });
 
-// Remove the navigation menu when clicking on one of the links.
-// Might not want this, but it's an option
+window.addEventListener("scroll", markSection);
 
-/*document.querySelectorAll(".nav-link").forEach((link) =>
-  link.addEventListener("click", () => {
-    hamburgerMenu.classList.remove("active");
-    navigationMenu.classList.remove("active");
-  })
-);*/
+function markSection() {
+  let pageScrollY = window.pageYOffset;
 
-//Helper function to check if a section is in the viewport
-// this function returns a boolean: true or false
+  mainSections.forEach((current) => {
+    const sectionHeight = current.offsetHeight;
 
-function inViewport(element) {
-  const position = element.getBoundingClientRect();
-  return (
-    position.top >= 0 &&
-    position.left >= 0 &&
-    position.bottom <=
-      (window.innerHeight || document.documentElement.clientHeight) &&
-    position.right <=
-      (window.innerWidth || document.documentElement.clientWidth)
-  );
+    const topOfSection =
+      current.getBoundingClientRect().top + pageScrollY - 150;
+    sectionId = current.getAttribute("data-nav");
+    if (scrollY > topOfSection && scrollY <= topOfSection + sectionHeight) {
+      document.getElementById(sectionId).classList.add("active-navbar");
+      current.classList.add("section-active");
+    } else {
+      document.getElementById(sectionId).classList.remove("active-navbar");
+      current.classList.remove("section-active");
+    }
+  });
 }
 
-//This function adds an Event Listener, that will do something if the object is in the viewport.
+// Form submision alert
 
-/*const message = document.querySelector(".message");*/
+const form = document.querySelector("#user-form");
 
-/*document.addEventListener(
-  "scroll",
-  function () {
-    if(inViewport() === true) {
-      document.querySelector().classList.add(".active");}
-      else { 
-        document.querySelector().classList.remove(".active");
-      };
-
-});*/ //Need to decide what I want the function to do when section is in viewport. But it works
-
-// event listener for links scrolling
-
-document.querySelectorAll("#navigation a").forEach((a) => {
-  a.addEventListener("click", (event) => {
-    event.preventDefault();
-    const id = a.getAttribute("href");
-    const section = document.querySelector(id);
-    section.scrollIntoView({
-      behavior: "smooth",
-    });
-  });
+form.addEventListener("submit", function (ev) {
+  ev.preventDefault();
+  alert("Your suggestions have been subbmited succesfully!");
 });
-
-// change the target to the id instead of link
