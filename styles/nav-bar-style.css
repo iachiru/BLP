@@ -1,9 +1,8 @@
 nav {
-  grid-area: nav;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 80vw;
+  width: 100vw;
 }
 ul {
   display: flex;
@@ -21,6 +20,7 @@ header {
 
 nav:hover {
   background-color: #ffb3ec;
+  cursor: pointer;
 }
 
 nav h2 {
@@ -45,7 +45,6 @@ nav ul {
   font-family: "DynaPuff", serif;
   list-style: none;
   justify-content: left;
-  /*display: none; when on mobile and I want them hidden*/
 }
 
 .active-navbar {
@@ -57,5 +56,3 @@ nav ul {
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   border-radius: 3em;
 }
-
-/* Hamburger menu for mobile version*/

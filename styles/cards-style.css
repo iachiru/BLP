@@ -1,3 +1,41 @@
+main {
+  grid-area: main;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  width: 90vw;
+  margin: 80px 0 0 50px;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 2em;
+}
+
+section h1 {
+  font-size: 3em;
+  width: 80vw;
+  padding: 0.5em;
+}
+
+section p {
+  width: 80vw;
+  padding: 1em;
+}
+
+figure img {
+  grid-area: image;
+  width: 75%;
+}
+
+figcaption {
+  grid-area: info;
+  width: 75%;
+  font-family: "Play", serif;
+}
+
 .card {
   grid-template-areas:
     "h3"

@@ -37,21 +37,32 @@ hamburgerMenu.addEventListener("click", () => {
   navigationMenu.classList.toggle("active");
 });
 
+// Determine the current viewport and highlight section and navbar
+
 window.addEventListener("scroll", markSection);
 
 function markSection() {
-  let pageScrollY = window.pageYOffset;
+  let pagescrollY = window.pageYOffset;
 
   mainSections.forEach((current) => {
+    // get the current position
     const sectionHeight = current.offsetHeight;
 
+    //confirm you are at the top of the section you want by checking data-nav
     const topOfSection =
-      current.getBoundingClientRect().top + pageScrollY - 150;
+      current.getBoundingClientRect().top + pagescrollY - 150;
     sectionId = current.getAttribute("data-nav");
-    if (scrollY > topOfSection && scrollY <= topOfSection + sectionHeight) {
+
+    // if the scroll has taken you a bit over the top of your required section but not out of it on either side,  add a active status to your navbar and the section you are on
+    if (
+      pagescrollY > topOfSection &&
+      pagescrollY <= topOfSection + sectionHeight
+    ) {
       document.getElementById(sectionId).classList.add("active-navbar");
       current.classList.add("section-active");
-    } else {
+    }
+    // if you are out of the section remove the active class and return to default behaviour
+    else {
       document.getElementById(sectionId).classList.remove("active-navbar");
       current.classList.remove("section-active");
     }

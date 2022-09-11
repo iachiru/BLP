@@ -13,34 +13,39 @@
   vertical-align: baseline;
   list-style: none;
 }
-a {
-  text-decoration: none;
+
+html {
+  overflow-x: hidden;
+}
+
+:root {
+  font-family: "Righteous", "Courier New", Courier, monospace;
 }
 
 body {
   display: grid;
   grid-template-areas:
-    "nav nav nav"
-    "header header header"
-    "article article article"
-    "main main main"
-    "main main main"
-    "main main main"
-    "footer footer footer";
-  grid-template-columns: 40% 40% 1fr;
-}
-:root {
-  font-family: "Righteous", "Courier New", Courier, monospace;
+    "header header"
+    "article article"
+    "main main"
+    "main main"
+    "main main"
+    "footer footer";
+  grid-template-columns: 50% 50%;
 }
 
 /* This is for the introduction*/
 article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-end;
   font-size: 1rem;
   grid-area: article;
   font-family: "Play", serif;
   padding: 10px;
-  margin-left: 50px;
-  width: 80%;
+  margin: 50px 0 0 50px;
+  width: 90vw;
 }
 
 blockquote {
@@ -54,45 +59,6 @@ cite p {
 
 /*This is the layout of the cards*/
 
-main {
-  grid-area: main;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1em;
-  width: 90vw;
-  margin: 80px 0 0 50px;
-}
-
-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  padding: 2em;
-}
-
-section h1 {
-  font-size: 3em;
-  width: 80vw;
-  padding: 0.5em;
-}
-
-section p {
-  width: 80vw;
-  padding: 1em;
-}
-
-figure img {
-  grid-area: image;
-  width: 75%;
-  /*margin-left: 90px;*/
-}
-
-figcaption {
-  grid-area: info;
-  width: 75%;
-  font-family: "Play", serif;
-}
-
 /*This is for the footer */
 
 footer {
@@ -103,45 +69,10 @@ footer {
   align-items: baseline;
 }
 
-.footer-buttons {
-  height: 50px;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  justify-content: center;
-}
-
-.footer-buttons button {
-  align-items: center;
-  appearance: button;
-  background-color: #0276ff;
-  border-radius: 20px;
-  border-style: none;
-  box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px inset;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: flex;
-  flex-direction: row;
-  flex-shrink: 0;
-  font-family: "Play", serif;
-  font-size: 100%;
-  line-height: 1.15;
-  margin: 0;
-  padding: 10px 21px;
-  text-align: center;
-  text-transform: none;
-}
-
-.footer-buttons button:hover {
-  background-color: #1c84ff;
-}
-
 /* This is the contact info*/
 
 .contact-info {
-  width: 100%;
+  width: 100vw;
   height: 300px;
   background-color: #ffe6f9;
   margin-top: 20px;
@@ -178,13 +109,14 @@ footer {
 
 .contact-cards p {
   font-family: "Play", serif;
+  font-size: 1em;
 }
 
 /* This is the information footer*/
 
 .socials-info {
   height: 300px;
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -215,7 +147,7 @@ footer {
   background-color: #800062;
 }
 
-/* CSS for laptop and tablet */
+/* CSS for laptop*/
 
 @media screen and (max-width: 1024px) and (min-width: 781px) {
   body {
@@ -225,13 +157,9 @@ footer {
       "header"
       "article"
       "main"
-      "aside"
       "footer";
   }
 
-  ul li {
-    padding: 0;
-  }
   nav {
     width: 100vw;
     display: grid;
@@ -239,13 +167,20 @@ footer {
     grid-template-areas: "logo" "ul";
     justify-items: center;
     align-items: end;
+    font-size: 1.15em;
   }
+
+  article {
+    font-size: 1em;
+  }
+
   main {
     align-self: center;
     margin: 0;
     display: grid;
     grid-template-columns: 1fr;
     width: 100%;
+    font-size: 1.15em;
   }
 
   .card {
@@ -277,23 +212,27 @@ footer {
     justify-content: center;
   }
 
+  .logo {
+    width: 100px;
+  }
+
   article {
     width: 100vw;
     margin: 0;
-    font-size: 0.85em;
+    font-size: 1em;
     border: 1px dashed #ffb3ec;
   }
 
   main {
-    align-self: center;
     margin: 0;
-    display: grid;
-    grid-template-columns: 1fr;
     width: 100%;
   }
-  .logo {
-    width: 100px;
+
+  #suggestions {
+    margin: 0;
+    width: 100%;
   }
+
   .card {
     width: 75%;
     display: flex;
@@ -316,22 +255,23 @@ footer {
   }
 
   .contact-cards h3 {
-    font-size: 1em;
+    font-size: 1.25em;
   }
 
   .contact-cards p {
-    font-size: 0.6em;
+    font-size: 1em;
   }
 
   .socials-info {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    justify-content: space-between;
+    width: 100vw;
+    padding-left: 20px;
   }
 
   .socials-info img {
-    width: 9vw;
+    width: 7vw;
   }
 
   .social-media {
@@ -339,15 +279,14 @@ footer {
   }
 
   .something h3 {
-    font-size: 1.5em;
+    font-size: 1.1em;
   }
 
   .something {
-    font-size: 0.7em;
+    font-size: 1em;
   }
 
   #ham-menu {
-    border: 1px solid red;
     width: 125px;
     display: flex;
     justify-content: flex-start;
@@ -420,16 +359,6 @@ footer {
 /* CSS for mobile */
 
 @media screen and (max-width: 360px) {
-  body {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "header"
-      "article"
-      "main"
-      "footer";
-  }
-
   nav {
     width: 100vw;
     display: grid;
@@ -458,6 +387,11 @@ footer {
     grid-template-columns: 1fr;
     width: 100%;
   }
+
+  footer {
+    width: 100vw;
+  }
+
   .logo {
     width: 100px;
   }
@@ -473,7 +407,6 @@ footer {
   }
 
   .contact-info {
-    width: 100vw;
     font-size: 1em;
   }
 
@@ -513,7 +446,6 @@ footer {
     font-size: 0.7em;
   }
   #ham-menu {
-    border: 1px solid red;
     width: 125px;
     display: flex;
     justify-content: center;
@@ -572,7 +504,7 @@ footer {
     left: 0;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-content: flex-end;
   }
 
